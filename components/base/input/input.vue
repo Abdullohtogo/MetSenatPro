@@ -14,7 +14,8 @@ const props = defineProps({
 const inputTypes = computed(()=>{
   const types={
     text:'text',
-    password:'password'
+    password:'password',
+    search:'search',
   }
   return types[props.variant]
 })

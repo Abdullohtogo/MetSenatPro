@@ -1,7 +1,7 @@
 <template>
   <Header/>
-  <section class="bg-gray-100">
-    <div class="mx-[120px]">
+  <section class="bg-gray-100 py-[24px]">
+    <div class="mx-[120px] flex justify-between">
       <div class="flex rounded-md border-[0.5px] border-gray-200 w-[530px]">
         <button
           class="border-gray-200 border-[1px]"
@@ -48,7 +48,15 @@
           </div>
         </button>
       </div>
-      <div></div>
+      <div class="flex">
+        <div class="">
+          <label for="search" class="absolute translate-x-2 translate-y-2.5"><img src="/icons/search.svg" alt=""/></label>
+          <Input type="search" placeholder="Izlash" class="px-8" name="search" id="search"/>
+        </div>
+        <button class="bg-gray-200 p-3 flex gap-2">
+          <img src="/icons/filter.svg" alt=""/><span class="text-blue text-[14px] sf">filter</span>
+        </button>
+      </div>
     </div>
   </section>
   <section class="mx-[120px]">
@@ -68,6 +76,7 @@ import Dashboard from "../components/sections/Dashboard.vue";
 import Sponsors from "../components/sections/Sponsors.vue";
 import Students from "../components/sections/Students.vue";
 import Header from "../components/layout/Header.vue";
+import Input from "../components/base/input/input.vue";
 </script>
 <script>
 export default {

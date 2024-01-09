@@ -15,8 +15,8 @@
       </tr>
       </thead>
       <tbody class="">
-      <tr v-for="item in displayedData" :key="item.id" class="px-[16px] bg-white py-[22px]">
-        <td class="text-center">{{ item.id }}</td>
+      <tr v-for="item in displayedData" :key="item.id" class="">
+        <td class="text-center">{{}}</td>
         <td class="text-center">{{ item.name }}</td>
         <td class="text-center">{{item.phone}}</td>
         <td class="text-center">{{item.donated}}</td>
@@ -70,9 +70,19 @@ export default {
         {
           id:'2',
           name:'qozi',
+          phone:'+99898989989',
+          donated:'2000000',
+          spent:'434333335',
+          date:'3232332',
+          condition:'new',
         },{
           id:'3',
           name:'qozi',
+          phone:'+99898989989',
+          donated:'2000000',
+          spent:'434333335',
+          date:'3232332',
+          condition:'new',
         },{
           id:'4',
           name:'qozi',
@@ -109,6 +119,9 @@ export default {
     };
   },
   computed: {
+    tr() {
+      return tr
+    },
     totalItems() {
       return this.data.length;
     },
