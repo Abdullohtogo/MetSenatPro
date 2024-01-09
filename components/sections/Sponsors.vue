@@ -14,7 +14,7 @@
         <th>AMALLAR</th>
       </tr>
       </thead>
-      <tbody class="">
+      <tbody class="bg-white">
       <tr v-for="item in displayedData" :key="item.id" class="">
         <td class="text-center">{{}}</td>
         <td class="text-center">{{ item.name }}</td>
@@ -23,7 +23,7 @@
         <td class="text-center">{{item.spent}}</td>
         <td class="text-center">{{item.date}}</td>
         <td class="text-center">{{item.condition}}</td>
-        <td class=""><button class="w-[24px]"><img src="/icons/eyeIcon.svg" alt=""></button></td>
+        <td class=""><button class="flex mx-auto"><img src="/icons/eyeIcon.svg" alt=""></button></td>
       </tr>
       </tbody>
     </table>
@@ -165,4 +165,5 @@ export default {
     },
   },
 };
+
 </script>

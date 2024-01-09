@@ -48,14 +48,16 @@
           </div>
         </button>
       </div>
-      <div class="flex">
+      <div class="flex gap-5">
         <div class="">
           <label for="search" class="absolute translate-x-2 translate-y-2.5"><img src="/icons/search.svg" alt=""/></label>
           <Input type="search" placeholder="Izlash" class="px-8" name="search" id="search"/>
         </div>
-        <button class="bg-gray-200 p-3 flex gap-2">
-          <img src="/icons/filter.svg" alt=""/><span class="text-blue text-[14px] sf">filter</span>
-        </button>
+        <div>
+          <button class="bg-gray-200 gap-1.5 flex rounded-md" @click="openModal">
+            <img src="/icons/filter.svg" alt="" class="mt-[3px] py-[11px] pl-[32px]"/><span class="text-blue text-[16px] font-semibold sf pr-[32px] py-[10px]">filter</span>
+          </button>
+        </div>
       </div>
     </div>
   </section>
@@ -70,6 +72,21 @@
       <Students />
     </div>
   </section>
+
+  <div v-if="activeTab === 'tab2'">
+    <Modal v-if="isModalOpen" @close="closeModal">
+      <!-- Modal content goes here -->
+      <h2>Sponsors Modal</h2>
+      <p>This is the modal content.</p>
+    </Modal>
+  </div>
+  <div v-if="activeTab === 'tab3'">
+    <Modal v-if="isModalOpen" @close="closeModal">
+      <!-- Modal content goes here -->
+      <h2>Students Modal</h2>
+      <p>This is the modal content.</p>
+    </Modal>
+  </div>
 </template>
 <script setup>
 import Dashboard from "../components/sections/Dashboard.vue";
@@ -79,11 +96,25 @@ import Header from "../components/layout/Header.vue";
 import Input from "../components/base/input/input.vue";
 </script>
 <script>
+import Modal from "../components/base/modal/modal.vue";
+
 export default {
   data() {
     return {
+      isModalOpen: false,
       activeTab: 'tab1',
-    }
+    };
   },
-}
+  methods: {
+    openModal() {
+      this.isModalOpen = true;
+    },
+    closeModal() {
+      this.isModalOpen = false;
+    },
+  },
+  components: {
+    Modal,
+  },
+};
 </script>

@@ -29,6 +29,9 @@ export default {
             blue:{
                 DEFAULT:'#2E5BFF',
             },
+            green:{
+              DEFAULT:'#00AE69',
+            },
         },
         screens:{
             xs:'300px',
