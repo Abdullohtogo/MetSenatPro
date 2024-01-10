@@ -3,8 +3,7 @@
     <div class="modal-mask" @click="close">
       <div class="modal-container" @click.stop>
         <!-- Close button -->
-        <span class="modal-close" @click="close">&times;</span>
-
+<!--        <span class="modal-close" @click="close">&times;</span>-->
         <!-- Modal content slot -->
         <slot></slot>
       </div>

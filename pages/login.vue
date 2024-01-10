@@ -19,7 +19,7 @@
           <div>
             captcha
           </div>
-          <Button text="Get Started"/>
+          <Button textButton="Get Started"/>
         </form>
       </div>
     </div>

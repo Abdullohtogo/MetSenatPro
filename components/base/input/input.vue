@@ -16,6 +16,8 @@ const inputTypes = computed(()=>{
     text:'text',
     password:'password',
     search:'search',
+    select:'select',
+    date:'date'
   }
   return types[props.variant]
 })

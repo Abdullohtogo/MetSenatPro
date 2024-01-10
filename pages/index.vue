@@ -75,9 +75,41 @@
 
   <div v-if="activeTab === 'tab2'">
     <Modal v-if="isModalOpen" @close="closeModal">
-      <!-- Modal content goes here -->
-      <h2>Sponsors Modal</h2>
-      <p>This is the modal content.</p>
+      <div class="mx-[28px] w-[586px]">
+        <div class="flex justify-between">
+          <h2 class="sf font-semibold text-[24px]">Filter</h2>
+          <button @click="closeModal"><img src="/icons/x.svg" alt=""></button>
+        </div>
+        <div class="w-full border-gray-400 border-[.5px] h-[.5px] mt-[28px]"></div>
+        <form>
+          <div class="flex flex-col mt-3">
+            <label for="condition" class="py-1 font-semibold sf uppercase text-[12px]">Ariza Holati</label>
+            <select v-model="All" @change="data" name="condition" id="condition" class="w-full h-[42px] bg-gray px-3 rounded-md">
+              <option v-for="option in data" :key="option" :value="option">
+                {{ option }}
+              </option>
+            </select>
+          </div>
+          <div class="mt-10">
+            <p class="sf font-semibold pb-3 uppercase text-[12px]">Homiylik summasi</p>
+            <div class="grid grid-cols-4 gap-2">
+              <allButton/>
+<!--              <div>-->
+                <filterButton/>
+<!--              </div>-->
+            </div>
+          </div>
+          <div class="mt-10">
+            <p class="sf font-semibold pb-3 uppercase text-[12px]">sana</p>
+            <Input type="date" class="w-[250px]"/>
+          </div>
+          <div class="w-full border-gray-400 border-[.5px] h-[.5px] mt-[28px]"></div>
+          <div class="mt-[28px] mb-2 gap-2.5 flex float-right">
+            <ButtonSecondary textButton="Tozalash"/>
+            <Button @click="closeModal" class="px-[32px] py-[10px] sf" textButton="Natijalarni ko‘rish"/>
+          </div>
+        </form>
+      </div>
     </Modal>
   </div>
   <div v-if="activeTab === 'tab3'">
@@ -94,15 +126,27 @@ import Sponsors from "../components/sections/Sponsors.vue";
 import Students from "../components/sections/Students.vue";
 import Header from "../components/layout/Header.vue";
 import Input from "../components/base/input/input.vue";
+import Button from "../components/base/button/button.vue";
+import ButtonSecondary from "../components/base/button/buttonSecondary.vue";
+import AllButton from "../components/base/button/allButton.vue";
+import FilterButton from "../components/base/button/filterButton.vue";
 </script>
 <script>
 import Modal from "../components/base/modal/modal.vue";
+import {ref} from "vue";
 
 export default {
   data() {
     return {
       isModalOpen: false,
       activeTab: 'tab1',
+      All: ref("Barchasi"),
+      data:[
+        "Barchasi","Tasdiqlangan","Moderatsiyada","Yangi"
+      ],
+      buttons:[
+          "1000000", "5000000", "7000000"
+      ],
     };
   },
   methods: {

@@ -1,8 +1,8 @@
 <template>
   <button
-    class="bg-blue py-3 rounded-md"
+      class="border-[1px] border-gray-300 py-3 px-[32px] rounded-md"
   >
-    <span class="text-white">
+    <span class="text-gray-300">
       {{ textButton }}
     </span>
   </button>
