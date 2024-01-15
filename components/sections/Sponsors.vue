@@ -23,7 +23,7 @@
         <td class="text-center">{{item.spent}}</td>
         <td class="text-center">{{item.date}}</td>
         <td class="text-center">{{item.condition}}</td>
-        <td class=""><button class="flex mx-auto"><img src="/icons/eyeIcon.svg" alt=""></button></td>
+        <td class=""><RouterLink class="flex mx-auto" to="/customer"><img src="/icons/eyeIcon.svg" alt=""></RouterLink></td>
       </tr>
       </tbody>
     </table>
