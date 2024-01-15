@@ -4,7 +4,7 @@
     <div class=" bg-gray-100">
       <div class="mx-[120px] py-7">
         <div class="gap-3 flex">
-          <button><img src="/icons/arrow-left.svg" alt=""/></button>
+          <RouterLink to="/"><img src="/icons/arrow-left.svg" alt=""/></RouterLink>
           <p class="sf font-bold text-[24px]">Ishmuhammedov Aziz Ishqobilovich</p>
         </div>
       </div>
@@ -41,12 +41,44 @@
       <Modal v-if="isModalOpen" @close="closeModal">
         <div class="mx-[28px] w-[586px]">
           <div class="flex justify-between">
-            <h2 class="sf font-semibold text-[24px]">Filter</h2>
+            <h2 class="sf font-semibold text-[24px]">Tahrirlash</h2>
             <button @click="closeModal"><img src="/icons/x.svg" alt=""></button>
           </div>
           <div class="w-full border-gray-400 border-[.5px] h-[.5px] mt-[28px]"></div>
-          <form class="mt-5">
-            <div>
+          <div class="mt-[28px]">
+            <button
+                class="border-gray-200 border-[1px]"
+                @click="activeTab = 'tab1'"
+                :class="{ active: activeTab === 'tab1' }"
+            >
+              <div
+                  class="px-[99px] text-[12px] py-[14px] font-normal uppercase"
+                  :class="{
+              active_button: activeTab === 'tab1',
+              passive_button: activeTab !== 'tab1',
+            }"
+              >
+                Jismoniy Shaxs
+              </div>
+            </button>
+            <button
+                class="border-gray-200 border-[1px]"
+                @click="activeTab = 'tab2'"
+                :class="{ active: activeTab === 'tab2' }"
+            >
+              <div
+                  class="px-[99px] text-[12px] py-[14px] font-normal uppercase"
+                  :class="{
+              active_button: activeTab === 'tab2',
+              passive_button: activeTab !== 'tab2',
+            }"
+              >
+                Yuridik shaxs
+              </div>
+            </button>
+          </div>
+          <form class="mt-5" v-if="activeTab==='tab1'">
+            <div class="pb-4">
               <label for="name" class="font-semibold sf uppercase text-[13px]">F.I.Sh (Familiya Ism Sharif)</label>
               <Input type="text" placeholder="Telefon Raqam" name="name" id="name"/>
             </div>
@@ -55,15 +87,70 @@
               <Input type="text" placeholder="Telefon Raqam" id="phone" name="phone"/>
             </div>
             <div class="flex flex-col mt-3">
-            <label for="condition" class="py-2 font-semibold sf uppercase text-[12px]">Ariza Holati</label>
+            <label for="condition" class="py-2 font-semibold sf uppercase text-[12px]">Holati</label>
             <select v-model="All" @change="data" name="condition" id="condition" class="w-full h-[42px] bg-gray px-3 rounded-md">
               <option v-for="option in data" :key="option" :value="option">
                 {{ option }}
               </option>
             </select>
           </div>
+            <div class="flex flex-col mt-4">
+              <label for="condition" class="py-1 font-semibold sf uppercase text-[12px]">Homiylik Summasi</label>
+              <select v-model="All" @change="data" name="condition" id="condition" class="w-full h-[42px] bg-gray px-3 rounded-md">
+                <option v-for="option in data" :key="option" :value="option">
+                  {{ option }}
+                </option>
+              </select>
+            </div>
+            <div class="flex flex-col mt-4">
+              <label for="condition" class="py-1 font-semibold sf uppercase text-[12px]">Tulov turi</label>
+              <select v-model="All" @change="data" name="condition" id="condition" class="w-full h-[42px] bg-gray px-3 rounded-md">
+                <option v-for="option in data" :key="option" :value="option">
+                  {{ option }}
+                </option>
+              </select>
+            </div>
+            <div class="w-full border-gray-400 border-[.5px] h-[.5px] mt-[28px]"></div>
+            <div class="mt-[28px] mb-2 gap-2.5 flex float-right">
+              <Button @click="closeModal" class="px-[32px] py-[10px] sf" textButton="Saqlash"/>
+            </div>
+
+          </form>
+          <form class="mt-5" v-if="activeTab==='tab2'">
+            <div class="pb-4">
+              <label for="name" class="font-semibold sf uppercase text-[13px]">F.I.Sh (Familiya Ism Sharif)</label>
+              <Input type="text" placeholder="Telefon Raqam" name="name" id="name"/>
+            </div>
+            <div>
+              <label for="phone" class="mt-1 font-semibold sf uppercase text-[12px]">Telefon Raqam</label>
+              <Input type="text" placeholder="Telefon Raqam" id="phone" name="phone"/>
+            </div>
             <div class="flex flex-col mt-3">
-              <label for="condition" class="py-1 font-semibold sf uppercase text-[12px]">Ariza Holati</label>
+              <label for="condition" class="py-2 font-semibold sf uppercase text-[12px]">Holati</label>
+              <select v-model="All" @change="data" name="condition" id="condition" class="w-full h-[42px] bg-gray px-3 rounded-md">
+                <option v-for="option in data" :key="option" :value="option">
+                  {{ option }}
+                </option>
+              </select>
+            </div>
+            <div class="flex flex-col mt-4">
+              <label for="condition" class="py-1 font-semibold sf uppercase text-[12px]">Homiylik Summasi</label>
+              <select v-model="All" @change="data" name="condition" id="condition" class="w-full h-[42px] bg-gray px-3 rounded-md">
+                <option v-for="option in data" :key="option" :value="option">
+                  {{ option }}
+                </option>
+              </select>
+            </div>
+            <div class="flex flex-col mt-4">
+              <label for="condition" class="py-1 font-semibold sf uppercase text-[12px]">Tulov turi</label>
+              <select v-model="All" @change="data" name="condition" id="condition" class="w-full h-[42px] bg-gray px-3 rounded-md">
+                <option v-for="option in data" :key="option" :value="option">
+                  {{ option }}
+                </option>
+              </select>
+            </div>
+            <div class="flex flex-col mt-4">
+              <label for="condition" class="py-1 font-semibold sf uppercase text-[12px]">Tashkilot Nomi</label>
               <select v-model="All" @change="data" name="condition" id="condition" class="w-full h-[42px] bg-gray px-3 rounded-md">
                 <option v-for="option in data" :key="option" :value="option">
                   {{ option }}
