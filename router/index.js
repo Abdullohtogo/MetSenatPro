@@ -11,6 +11,11 @@ const routes=[
         path:'/login',
         name:'login',
         component:()=>import('../pages/login.vue')
+    },
+    {
+        path:'/customer',
+        name:'customer',
+        component:()=>import('../pages/customer.vue')
     }
 ];
 

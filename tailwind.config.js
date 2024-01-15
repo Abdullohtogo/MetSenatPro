@@ -28,6 +28,7 @@ export default {
             },
             blue:{
                 DEFAULT:'#2E5BFF',
+                100:'#EDF1FD'
             },
             green:{
               DEFAULT:'#00AE69',
