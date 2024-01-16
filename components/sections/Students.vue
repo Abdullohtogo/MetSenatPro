@@ -1,6 +1,8 @@
 <template>
   <div>
-
+    <RouterLink to="/addstudents">
+      <Button class="px-[32px] float-right my-[28px]" text-button="+ talabalarni qo'shish"></Button>
+    </RouterLink>
     <table class="w-full ">
       <thead>
       <tr>
@@ -50,8 +52,10 @@
 
 <script>
 import { ref, computed } from 'vue';
+import Button from "../base/button/button.vue";
 
 export default {
+  components: {Button},
   data() {
     return {
       currentPage: ref(1),

@@ -14,8 +14,8 @@
         <th>AMALLAR</th>
       </tr>
       </thead>
-      <tbody class="bg-white">
-      <tr v-for="item in displayedData" :key="item.id" class="">
+      <tbody class="bg-white mt-20">
+      <tr v-for="item in displayedData" :key="item.id" class="h-[58px]">
         <td class="text-center">{{}}</td>
         <td class="text-center">{{ item.name }}</td>
         <td class="text-center">{{item.phone}}</td>
@@ -47,7 +47,9 @@
     </div>
   </div>
 </template>
-
+<script setup>
+let a=1;
+</script>
 <script>
 import { ref, computed } from 'vue';
 
