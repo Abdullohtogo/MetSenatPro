@@ -10,9 +10,13 @@
   </section>
   <div class="w-full bg-white mt-[28px]">
     <h2 class="pt-[24px] pl-[24px] text-[24px] sf font-semibold">Homiylar va Talabalar soni</h2>
+    <div class="mt-7">
+      <Chart/>
+    </div>
   </div>
 </template>
 <script setup>
+import Chart from '../base/charts/chart.vue'
 const dashboardItems = [
   {
     image: '/icons/moneyIconB.svg',

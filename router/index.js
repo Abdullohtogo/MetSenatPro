@@ -26,6 +26,11 @@ const routes=[
         path:'/student',
         name:'student',
         component:()=> import('../pages/student.vue')
+    },
+    {
+        path:'/apicall',
+        name:'apicall',
+        component:()=> import('../pages/apiCall.vue')
     }
 ];
 

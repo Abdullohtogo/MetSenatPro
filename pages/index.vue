@@ -51,7 +51,7 @@
       <div class="flex gap-5">
         <div class="">
           <label for="search" class="absolute translate-x-2 translate-y-2.5"><img src="/icons/search.svg" alt=""/></label>
-          <Input type="search" placeholder="Izlash" class="px-8" name="search" id="search"/>
+          <Input type="search" placeholder="Izlash" class="px-8" name="search" id="search" v-model="searchQuery" @input="data"/>
         </div>
         <div>
           <button class="bg-gray-200 gap-1.5 flex rounded-md" @click="openModal">
@@ -165,6 +165,7 @@ import {ref} from "vue";
 export default {
   data() {
     return {
+      searchQuery: '',
       isModalOpen: false,
       activeTab: 'tab1',
       All: ref("Barchasi"),
@@ -182,6 +183,16 @@ export default {
     },
     closeModal() {
       this.isModalOpen = false;
+    },
+    filteredData() {
+      // const query = this.searchQuery.toLowerCase();
+      // return this.items.filter(item => item.toLowerCase().includes(query));
+    },
+  },
+  computed:{
+    filteredData() {
+      const query = this.searchQuery.toLowerCase();
+      return this.data.filter(item => item.toLowerCase().includes(query));
     },
   },
   components: {

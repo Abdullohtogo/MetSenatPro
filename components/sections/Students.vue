@@ -1,8 +1,6 @@
 <template>
   <div>
-    <RouterLink to="/addstudents">
-      <Button class="px-[32px] float-right my-[28px]" text-button="+ talabalarni qo'shish"></Button>
-    </RouterLink>
+    <RouterLink to="/addstudents"><Button text-button="+ talabalarni qo'shish" class="px-8 float-right my-7"/></RouterLink>
     <table class="w-full ">
       <thead>
       <tr>
