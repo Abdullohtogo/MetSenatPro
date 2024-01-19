@@ -15,6 +15,9 @@ body{
 .passive_button{
     @apply text-blue
 }
+.activeButtonD{
+    @apply rounded-md bg-blue
+}
 .sf{
     font-family: "San Francisco Pro", sans-serif;
 }

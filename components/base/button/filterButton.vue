@@ -1,12 +1,13 @@
 <template>
-  <button class="sf py-[16px] text-[14px] px-[32px]  font-semibold rounded-md flex gap-1 border-gray-200 border-[1px]"  v-for="(button, index) in buttons" :key="index">{{button}} <span class="sf text-[14px] text-blue">UZS</span></button>
+  <button class="sf py-[16px] text-[14px] px-[32px]  font-semibold rounded-md flex gap-1 border-gray-200 border-[1px]">1000000<span class="sf text-[14px] text-blue">UZS</span></button>
 </template>
 <script>
 export default{
   data(){
     return{
+      active:'',
       buttons:[
-        "1000000", "5000000", "7000000"
+        "1000000", "5000000", "7000000",
       ],
     }
   }
