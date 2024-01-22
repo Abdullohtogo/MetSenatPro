@@ -1,33 +1,33 @@
 <template>
   <div>
 
-    <table class="w-full ">
+    <table class="w-full border-separate border-spacing-y-3 rounded-md mt-12">
       <thead>
       <tr>
-        <th>#</th>
-        <th>F.I.SH</th>
-        <th>TEL.RAQAMI</th>
-        <th>HOMIYLIK SUMMASI</th>
-        <th>SARFLANGAN SUMMA</th>
-        <th>SANA</th>
-        <th>HOLATI</th>
-        <th>AMALLAR</th>
+        <th class="text-gray-400 font-semibold sf">#</th>
+        <th class="text-gray-400 font-semibold sf">F.I.SH</th>
+        <th class="text-gray-400 font-semibold sf">TEL.RAQAMI</th>
+        <th class="text-gray-400 font-semibold sf">HOMIYLIK SUMMASI</th>
+        <th class="text-gray-400 font-semibold sf">SARFLANGAN SUMMA</th>
+        <th class="text-gray-400 font-semibold sf">SANA</th>
+        <th class="text-gray-400 font-semibold sf">HOLATI</th>
+        <th class="text-gray-400 font-semibold sf">AMALLAR</th>
       </tr>
       </thead>
-      <tbody class="bg-white mt-20">
-      <tr v-for="item in displayedData" :key="item.id" class="h-[58px]">
-        <td class="text-center">{{}}</td>
-        <td class="text-center">{{ item.name }}</td>
-        <td class="text-center">{{item.phone}}</td>
-        <td class="text-center">{{item.donated}}</td>
-        <td class="text-center">{{item.spent}}</td>
-        <td class="text-center">{{item.date}}</td>
-        <td class="text-center">{{item.condition}}</td>
-        <td class=""><RouterLink class="flex mx-auto" to="/customer"><img src="/icons/eyeIcon.svg" alt=""></RouterLink></td>
+      <tbody class="rounded-md" v-for="item in displayedData" :key="item.id" >
+      <tr class="bg-white">
+        <td class="text-center h-[70px]">{{item.id}}</td>
+        <td class="text-center h-[70px]">{{ item.name }}</td>
+        <td class="text-center h-[70px]">{{item.phone}}</td>
+        <td class="text-center h-[70px]">{{item.donated}}</td>
+        <td class="text-center h-[70px]">{{item.spent}}</td>
+        <td class="text-center h-[70px]">{{item.date}}</td>
+        <td class="text-center h-[70px]">{{item.condition}}</td>
+        <td class="flex justify-center mt-6"><RouterLink class="" to="/customer"><img src="/icons/eyeIcon.svg" alt=""></RouterLink></td>
       </tr>
       </tbody>
     </table>
-    <div class="flex justify-between">
+    <div class="flex justify-between mb-10">
       <div>
         <label for="itemsPerPage">Items per page:</label>
         <select v-model="itemsPerPage" @change="changeItemsPerPage">
@@ -36,18 +36,26 @@
           </option>
         </select>
       </div>
-      <div class="pagination">
-        <button @click="prevPage" :disabled="currentPage === 1">&lt; Prev</button>
+      <div>
         <span>Page:</span>
         <input type="number" v-model="currentPage" @input="changePage" min="1" :max="totalPages" />
         <span>of {{ totalPages }}</span>
-        <button @click="nextPage" :disabled="currentPage === totalPages">Next &gt;</button>
-        <span>| Showing {{ rangeStart }} - {{ rangeEnd }} of {{ totalItems }} items</span>
+      </div>
+      <div class="pagination flex">
+        <div class="">
+          <button v-if="currentPage===1" @click="prevPage" class="w-8 h-8 text-gray-600 rounded-md mr-4 bg-gray-500" :disabled="currentPage === 1">&lt;</button>
+          <button v-if="currentPage!==1" @click="prevPage" class="w-8 h-8 text-gray-600 rounded-md mr-4 bg-white">&lt;</button>
+          <button v-if="currentPage===totalPages" @click="nextPage" class="w-8 h-8 text-gray-600 rounded-md bg-gray-500" :disabled="currentPage === 1">&gt;</button>
+          <button v-if="currentPage!==totalPages" @click="nextPage" class="w-8 h-8 text-gray-600 rounded-md bg-white">&gt;</button>
+        </div>
+        <span class="ml-3"> | Showing {{ rangeStart }} - {{ rangeEnd }} of {{ totalItems }} items</span>
       </div>
     </div>
   </div>
 </template>
 <script setup>
+import Button from "../base/button/button.vue";
+
 let a=1;
 </script>
 <script>
@@ -57,7 +65,7 @@ export default {
   data() {
     return {
       currentPage: ref(1),
-      itemsPerPage: ref(10),
+      itemsPerPage: ref(5),
       itemsPerPageOptions: [5, 10, 20], // Customize options as needed
       data: [
         {

@@ -22,6 +22,9 @@ export default {
                 100:'#f9fffd',
                 200:'#DDE3FB',
                 300:'#7A7A9D',
+                400:'#B1B1B8',
+                500:'#DFE3E8',
+                600:'#979797',
             },
             red:{
                 DEFAULT:'#E94A47',

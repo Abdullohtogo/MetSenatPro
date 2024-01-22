@@ -85,6 +85,7 @@
         </div>
         <div class="w-full border-gray-400 border-[.5px] h-[.5px] mt-[28px]"></div>
         <form>
+
           <div class="flex flex-col mt-3">
             <label for="condition" class="py-1 font-semibold sf uppercase text-[12px]">Ariza Holati</label>
             <select v-model="All" @change="data" name="condition" id="condition"
@@ -98,38 +99,6 @@
             <p class="sf font-semibold pb-3 uppercase text-[12px]">Homiylik summasi</p>
             <div class="grid grid-cols-4 gap-2">
               <allButton/>
-              <button
-                  class="border-gray-200 border-[1px]"
-                  @click="activeButton = 'tab1'"
-                  :class="{ activeButtonD: activeButton === 'tab1' }"
-              >
-          <span
-              class="px-[54px] text-[12px] py-[14px] font-normal"
-          >DASHBOARD</span
-          >
-              </button>
-              <button
-                  class="border-gray-200 border-[1px]"
-                  @click="activeTab = 'tab2'"
-                  :class="{ activeButtonD: activeButton === 'tab2' }"
-              >
-                <div
-                    class="px-[54px] text-[12px] py-[14px] font-normal"
-                >
-                  HOMIYLAR
-                </div>
-              </button>
-              <button
-                  class="border-gray-200 border-[1px]"
-                  @click="activeButton = 'tab3'"
-                  :class="{ activeButtonD: activeButton === 'tab3' }"
-              >
-                <div
-                    class="px-[54px] text-[12px] py-[14px] font-normal"
-                >
-                  TALABALAR
-                </div>
-              </button>
             </div>
           </div>
           <div class="mt-10">
