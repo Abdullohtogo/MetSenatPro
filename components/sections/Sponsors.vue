@@ -1,7 +1,9 @@
 <template>
   <div>
 
-    <table class="w-full border-separate border-spacing-y-3 rounded-md mt-12">
+
+
+            <table class="w-full border-separate border-spacing-y-3 rounded-md mt-12">
       <thead>
       <tr>
         <th class="text-gray-400 font-semibold sf">#</th>
@@ -69,6 +71,65 @@ export default {
       itemsPerPage: ref(5),
       itemsPerPageOptions: [5, 10, 20], // Customize options as needed
       sponsors:[],
+      data: [
+        {
+          id: '1',
+          name: 'qozi',
+          phone: '+99898989989',
+          donated: 1000000,
+          spent: '434333335',
+          date: '3232332',
+          condition: 'new',
+        },
+        {
+          id: '2',
+          name: 'qozi',
+          phone: '+99898989989',
+          donated: 5000000,
+          spent: '434333335',
+          date: '3232332',
+          condition: 'new',
+        }, {
+          id: '3',
+          name: 'qozi',
+          phone: '+99898989989',
+          donated: 2000000,
+          spent: '434333335',
+          date: '3232332',
+          condition: 'new',
+        }, {
+          id: '4',
+          name: 'qozi',
+        },
+        {
+          id: '5',
+          name: 'qozi',
+        },
+        {
+          id: '6',
+          name: 'qozi',
+        },
+        {
+          id: '7',
+          name: 'qozi',
+        },
+        {
+          id: '8',
+          name: 'qozi',
+        },
+        {
+          id: '9',
+          name: 'qozi',
+        },
+        {
+          id: '10',
+          name: 'qozi',
+        },
+        {
+          id: '11',
+          name: 'qozi',
+        },
+      ], // Your
     };
   },
   computed: {
@@ -120,6 +181,9 @@ export default {
       this.currentPage = 1;
     },
   },
+  mounted() {
+    this.getSponsors()
+  }
 };
 
 </script>

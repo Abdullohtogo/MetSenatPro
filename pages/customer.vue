@@ -119,7 +119,7 @@
           <form class="mt-5" v-if="activeTab==='tab2'">
             <div class="pb-4">
               <label for="name" class="font-semibold sf uppercase text-[13px]">F.I.Sh (Familiya Ism Sharif)</label>
-              <Input type="text" placeholder="Telefon Raqam" name="name" id="name"/>
+              <Input type="text" placeholder="Ism Familiya" name="name" id="name"/>
             </div>
             <div>
               <label for="phone" class="mt-1 font-semibold sf uppercase text-[12px]">Telefon Raqam</label>
